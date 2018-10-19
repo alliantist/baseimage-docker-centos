@@ -1,5 +1,5 @@
-NAME = waystonesystems/baseimage-centos
-VERSION = 0.2.0
+NAME = 347717626420.dkr.ecr.eu-west-1.amazonaws.com/baseimage-centos
+VERSION = 0.0.1
 
 .PHONY: all build test tag_latest release ssh
 
@@ -14,9 +14,9 @@ test:
 tag_latest:
 	docker tag $(NAME):$(VERSION) $(NAME):latest
 
-release: test tag_latest
+release:
 	@if ! docker images $(NAME) | awk '{ print $$2 }' | grep -q -F $(VERSION); then echo "$(NAME) version $(VERSION) is not yet built. Please run 'make build'"; false; fi
-	docker push $(NAME)
+	docker push $(NAME):${VERSION}
 	@echo "*** Don't forget to create a tag by creating an official GitHub release."
 
 ssh:
