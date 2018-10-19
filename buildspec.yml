@@ -10,7 +10,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -f image/Dockerfile -t $IMAGE_REPO_NAME:$CODEBUILD_SOURCE_VERSION .
+      - docker build -f image/Dockerfile -t $IMAGE_REPO_NAME:$CODEBUILD_SOURCE_VERSION image
       - docker run $IMAGE_REPO_NAME:$CODEBUILD_SOURCE_VERSION ruby -v
   post_build:
     commands:
