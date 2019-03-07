@@ -16,8 +16,5 @@ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum update -y
 
 ## Fix locale.
-#$yum_install language-pack-en
-#locale-gen en_US
-#update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
-echo -n en_US.UTF-8 > /etc/container_environment/LANG
-echo -n en_US.UTF-8 > /etc/container_environment/LC_CTYPE
+echo -n en_GB.UTF-8 > /etc/container_environment/LANG
+echo -n en_GB.UTF-8 > /etc/container_environment/LC_CTYPE
