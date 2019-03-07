@@ -1,5 +1,6 @@
 FROM centos:7
 MAINTAINER Roy Crombleholme <roy.crombleholme@pam-it.com>
+RUN sed -i '/override_install_langs=en_US.utf8/d' /etc/yum.conf
 
 COPY . /bd_build
 
