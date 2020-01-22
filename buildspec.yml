@@ -16,3 +16,5 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push $IMAGE_REPO_NAME:$CODEBUILD_SOURCE_VERSION
+    finally:
+      - ./notify.sh
