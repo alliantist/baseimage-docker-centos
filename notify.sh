@@ -1,5 +1,6 @@
 MSG=$(git log -1 --format="%h %ai <%an> %s")
 COMMIT=$(git log -1 --format="%H")
+BRANCH_NAME=$(echo ${CODEBUILD_WEBHOOK_HEAD_REF} | awk -F'/' '{print $NF}')
 if [ $CODEBUILD_BUILD_SUCCEEDING -eq 1 ]; then
   STATUS='*SUCCESS*'
 else
