@@ -14,6 +14,6 @@ ENV LANG="en_GB.UTF-8" \
     LANGUAGE="en_GB:en" \
     LC_ALL="en_GB.UTF-8"
 
-RUN yum update -y && yum upgrade -y
+RUN yum update -y && yum upgrade -y && yum clean all
 
 CMD ["/sbin/my_init"]
